@@ -43,7 +43,7 @@ end
 bash 'move aside nginx package default.conf' do
   user 'root'
   code <<-EOH
-    mv #{node['nginx']['dir']}/conf.d/default.conf #{node['nginx']['dir']}/conf.d/default.conf.disable
+mv #{node['nginx']['dir']}/conf.d/default.conf #{node['nginx']['dir']}/conf.d/default.conf.disable
 EOH
-  only_if { ::File.exists?("#{node['nginx']['dir']}/conf.d/default.conf") }
+  only_if { ::File.exists?("#{node['nginx']['dir']}/conf.d/default.conf") && node['nginx']['default_site_pkg_disabled'] }
 end
