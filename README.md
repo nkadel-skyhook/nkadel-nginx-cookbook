@@ -92,6 +92,7 @@ Generally used attributes. Some have platform specific values. See `attributes/d
 - `node['nginx']['error_log_options']` - Set to a string of additional options
   to be appended to the error log directive
 - `node['nginx']['default_site_enabled']` - enable the default site
+- `node['nginx']['default_site_pkg_disabled']` - Disable package default site, interferes with default_site_enabled. Defaults to `true`.
 - `node['nginx']['sendfile']` - Whether to use `sendfile`. Defaults to "on".
 - `node['nginx']['install_method']` - Whether nginx is installed from
   packages or from source.
